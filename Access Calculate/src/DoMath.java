@@ -1,0 +1,20 @@
+/* This class is client code that uses the Calculate Library 
+ * to perform various mathematical tasks 
+ * @author Alexis Lin
+ * @version September 6, 2018
+ */
+public class DoMath {
+
+	public static void main(String[] args) {
+		System.out.println(Calculate.cube(2));
+		System.out.println(Calculate.average(4,6));
+		System.out.println(Calculate.average(4,6,8));
+		System.out.println(Calculate.toRadians(90));
+		System.out.println(Calculate.discriminant(1, 2, 12));
+		System.out.println(Calculate.toImproperFrac(3,1,2));
+		System.out.println(Calculate.toMixNum(7,2));
+		
+
+	}
+
+}
