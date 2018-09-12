@@ -44,4 +44,8 @@ public class Calculate {
 	public static String toMixNum(int numerator, int denominator) {
 		return (numerator/denominator)+ " " + (numerator%denominator) + "/" + denominator; 
 	}
+	
+	public static String foil(int a, int b, int c, int d, String x) {
+		return (a*c) + x + "^2" + " + " + ((b*c)+(a*d)) + x + " + " +(b*d);
+	}
 }

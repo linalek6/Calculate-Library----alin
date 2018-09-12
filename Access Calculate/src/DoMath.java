@@ -13,6 +13,7 @@ public class DoMath {
 		System.out.println(Calculate.discriminant(1, 2, 12));
 		System.out.println(Calculate.toImproperFrac(3,1,2));
 		System.out.println(Calculate.toMixNum(7,2));
+		System.out.println(Calculate.foil(2,3,6,-7, "n"));
 		
 
 	}
