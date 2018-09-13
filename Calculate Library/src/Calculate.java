@@ -6,10 +6,6 @@ public class Calculate {
 	//returns the square of the input
 	public static int square(int number) {
 		return number*number;
-		/* int answer;
-		 * answer = number*number;
-		 * return answer;
-		 */
 	}
 	
 	public static int cube(int number) {
@@ -48,4 +44,34 @@ public class Calculate {
 	public static String foil(int a, int b, int c, int d, String x) {
 		return (a*c) + x + "^2" + " + " + ((b*c)+(a*d)) + x + " + " +(b*d);
 	}
+	
+	public static boolean isDivisibleBy(int dividend, int divisor) {
+		if (dividend % divisor == 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public static double absValue(double num) {
+		if (num > 0) {
+			return num;
+		}
+		else {
+			return num*(-1);
+		}
+					
+	}
+	public static double max(double num1, double num2) {
+		if (num1 > num2) {
+			return num1;
+		}
+		else {
+			return num2;
+		}
+	}
+	
+	
 }
+
