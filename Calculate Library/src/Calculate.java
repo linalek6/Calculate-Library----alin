@@ -72,6 +72,34 @@ public class Calculate {
 		}
 	}
 	
+	public static double max(double num1, double num2, double num3) {
+		if (num1>num2 && num1>num3) {
+			return num1;
+		}
+		else if (num2>num1 && num2>num3) {
+			return num2;
+		}
+		else {
+			return num3;
+		}
+	}
+	
+	public static int min(int num1, int num2) {
+		if (num1<num2) {
+			return num1;
+		}
+		else {
+			return num2;
+		}
+	}
+	public static double round2(double number) {
+		if (((number*100)-(int)(number*100))>= 0.5) {
+			return (double)(((int)(number*100)/100.00)+0.01);
+		}
+		else {
+			return (double)((int)(number*100)/100.00);
+		}
+		
 	
 }
 
