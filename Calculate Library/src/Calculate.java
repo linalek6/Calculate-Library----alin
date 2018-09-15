@@ -92,14 +92,71 @@ public class Calculate {
 			return num2;
 		}
 	}
-	public static double round2(double number) {
-		if (((number*100)-(int)(number*100))>= 0.5) {
-			return (double)(((int)(number*100)/100.00)+0.01);
+//check this again
+	 public static double round2(double num) {
+		if ((num*100)-(int)(num*100) >= 0.5) {
+			return (((int)(num*100))/100.0) + 0.01;
 		}
 		else {
-			return (double)((int)(number*100)/100.00);
+			return ((int)(num*100))/100.0;
 		}
-		
-	
+	 }
+	 public static double exponent(double base, int exponent) {
+		 double newBase = base;
+		 double answer = base;
+		 for (int i = 2; i<=exponent; i++) {
+			 newBase = base*newBase;
+			 answer = newBase;
+			
+			 }
+		 return answer;
+		 }
+	 //choose better variabl
+	 public static int factorial(int num) {
+		int product = 1;
+		 for (int i = 1; i <= num; i++) {
+			product = product*i;
+			 
+		 }
+		 return product;
+	 }
+	 //checks if an integer is prime
+	 public static boolean isPrime(int num) {
+		 for (int i = 2; i < num; i++) {
+				if (Calculate.isDivisibleBy(num,i)) {
+					return false;			
+				}
+		 }
+		 return true;
+	 }
+	 public static int gcf(int num1, int num2) {
+		 int gcf = 1;
+		 for (int cf = 1; cf <= Calculate.min(num1, num2); cf++) {
+			 if (Calculate.isDivisibleBy(num1, cf) && Calculate.isDivisibleBy(num2, cf)) {
+				 gcf = cf;
+			 }			 
+		 }
+		 return gcf;
+	 }
+	 /*
+	  * divide radicand by guess, add guess, half the sum
+	  * if radicand-0.005 <  answer * answer <  radicand + 0.005
+	  * return the answer
+	  * loop until you find the correct answer
+	  */
+	 public static double sqrt(double radicand) {
+		 double answer = 0;
+		 for (double guess = 0.0; guess <= radicand; guess += 0.001 ) {
+			 answer = (radicand/guess + guess)/2;
+			 if ((radicand - 0.005 <  answer*answer) && (answer*answer <  radicand + 0.005)) {
+				 return answer;
+			 }
+		 }
+		 Calculate.round2(answer);
+		 return answer;
+	 }
 }
+	 
+	
+
 
