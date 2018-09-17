@@ -8,43 +8,53 @@ public class Calculate {
 		return number*number;
 	}
 	
+	//returns the cube of the input
 	public static int cube(int number) {
 		return number*number*number;
 	}
 	
+	//returns the average of two numbers
 	public static double average(double value1, double value2) {
 		return (value1 + value2)/2;
 		
 	}
 	
+	//returns the average of three numbers
 	public static double average(double value1, double value2, double value3) {
 		return (value1 + value2 + value3)/3;
 	}
 	
+	//returns the degrees from radians
 	public static double toDegrees(double radians) {
 		return radians*(180/3.14);
 	}
 	
+	//returns radians from degrees
 	public static double toRadians(double degrees) {
 		return degrees*(3.14/180);
 	}
 	
+	//returns the discriminant of the quadratic formula
 	public static double discriminant(double a, double b, double c) {
 		return (b*b)- (4*a*c);
 	}
 	
+	//converts a mixed number to an improper fraction, returns
 	public static String toImproperFrac(int whole, int numerator, int denominator) {
 		return (whole*denominator+numerator)+"/"+denominator;
 	}
 	
+	//converts an improper fraction to a mixed number, returns
 	public static String toMixNum(int numerator, int denominator) {
 		return (numerator/denominator)+ " " + (numerator%denominator) + "/" + denominator; 
 	}
 	
+	//returns a foiled a quadratic
 	public static String foil(int a, int b, int c, int d, String x) {
 		return (a*c) + x + "^2" + " + " + ((b*c)+(a*d)) + x + " + " +(b*d);
 	}
 	
+	//determines if a number is divisible by another number
 	public static boolean isDivisibleBy(int dividend, int divisor) {
 		if (dividend % divisor == 0) {
 			return true;
@@ -54,6 +64,7 @@ public class Calculate {
 		}
 	}
 	
+	// returns the absolute value of anumber
 	public static double absValue(double num) {
 		if (num > 0) {
 			return num;
@@ -63,6 +74,7 @@ public class Calculate {
 		}
 					
 	}
+	//returns the maximum of two numbers
 	public static double max(double num1, double num2) {
 		if (num1 > num2) {
 			return num1;
@@ -72,6 +84,7 @@ public class Calculate {
 		}
 	}
 	
+	//returns the maximum of three numbers
 	public static double max(double num1, double num2, double num3) {
 		if (num1>num2 && num1>num3) {
 			return num1;
@@ -84,6 +97,7 @@ public class Calculate {
 		}
 	}
 	
+	//returns the minimun of two numbers
 	public static int min(int num1, int num2) {
 		if (num1<num2) {
 			return num1;
@@ -93,6 +107,7 @@ public class Calculate {
 		}
 	}
 //check this again
+	//rounds a number to the nearest hundredth place
 	 public static double round2(double num) {
 		if ((num*100)-(int)(num*100) >= 0.5) {
 			return (((int)(num*100))/100.0) + 0.01;
@@ -101,6 +116,8 @@ public class Calculate {
 			return ((int)(num*100))/100.0;
 		}
 	 }
+	 
+	 //returns a number powered by its exponent
 	 public static double exponent(double base, int exponent) {
 		 double newBase = base;
 		 double answer = base;
@@ -111,7 +128,8 @@ public class Calculate {
 			 }
 		 return answer;
 		 }
-	 //choose better variabl
+	 //choose better variable
+	 //returns the factorial of a number
 	 public static int factorial(int num) {
 		int product = 1;
 		 for (int i = 1; i <= num; i++) {
@@ -129,6 +147,7 @@ public class Calculate {
 		 }
 		 return true;
 	 }
+	 //returns the greatest common factor of two numbers
 	 public static int gcf(int num1, int num2) {
 		 int gcf = 1;
 		 for (int cf = 1; cf <= Calculate.min(num1, num2); cf++) {
@@ -138,6 +157,7 @@ public class Calculate {
 		 }
 		 return gcf;
 	 }
+	 //returns the square root of a number
 	 /*
 	  * divide radicand by guess, add guess, half the sum
 	  * if radicand-0.005 <  answer * answer <  radicand + 0.005
