@@ -15,8 +15,7 @@ public class Calculate {
 	
 	//returns the average of two numbers
 	public static double average(double value1, double value2) {
-		return (value1 + value2)/2;
-		
+		return (value1 + value2)/2;	
 	}
 	
 	//returns the average of three numbers
@@ -71,9 +70,9 @@ public class Calculate {
 		}
 		else {
 			return num*(-1);
-		}
-					
+		}				
 	}
+	
 	//returns the maximum of two numbers
 	public static double max(double num1, double num2) {
 		if (num1 > num2) {
@@ -106,7 +105,7 @@ public class Calculate {
 			return num2;
 		}
 	}
-//check this again
+	
 	//rounds a number to the nearest hundredth place
 	 public static double round2(double num) {
 		if ((num*100)-(int)(num*100) >= 0.5) {
@@ -128,7 +127,7 @@ public class Calculate {
 			 }
 		 return answer;
 		 }
-	 //choose better variable
+
 	 //returns the factorial of a number
 	 public static int factorial(int num) {
 		int product = 1;
