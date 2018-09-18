@@ -25,12 +25,12 @@ public class Calculate {
 	
 	//returns the degrees from radians
 	public static double toDegrees(double radians) {
-		return radians*(180/3.14);
+		return radians*(180/3.14169);
 	}
 	
 	//returns radians from degrees
 	public static double toRadians(double degrees) {
-		return degrees*(3.14/180);
+		return degrees*(3.14159/180);
 	}
 	
 	//returns the discriminant of the quadratic formula
@@ -107,15 +107,12 @@ public class Calculate {
 	}
 	
 	//rounds a number to the nearest hundredth place
-	 public static double round2(double num) {
-		if ((num*100)-(int)(num*100) >= 0.5) {
-			return (((int)(num*100))/100.0) + 0.01;
-		}
-		else {
-			return ((int)(num*100))/100.0;
-		}
+	 public static double round2(double num1) {
+		double num2 = (num1+.005)*100;
+		double num3 = ((int)num2)/100.0;
+		return num3;
 	 }
-	 
+
 	 //returns a number powered by its exponent
 	 public static double exponent(double base, int exponent) {
 		 double newBase = base;
@@ -164,7 +161,21 @@ public class Calculate {
 	  * loop until you find the correct answer
 	  */
 	 public static double sqrt(double radicand) {
-		 double answer = 0;
+		 double guess;
+		 double approximate=1;
+		 double answer;
+		 for (guess = 0.0; guess <= radicand; guess += 0.001) {
+			 approximate = (radicand/guess + guess)/2.0; 
+			 if ((radicand - 0.005 <  approximate*approximate) && (approximate*approximate <  radicand + 0.005)) {
+			answer = Calculate.round2(approximate);
+			 }
+		 }
+		return answer;
+	 }
+}
+
+
+		 /*double answer = 0;
 		 for (double guess = 0.0; guess <= radicand; guess += 0.001 ) {
 			 answer = (radicand/guess + guess)/2;
 			 if ((radicand - 0.005 <  answer*answer) && (answer*answer <  radicand + 0.005)) {
@@ -173,8 +184,8 @@ public class Calculate {
 		 }
 		 Calculate.round2(answer);
 		 return answer;
-	 }
-}
+		 */
+
 	 
 	
 
