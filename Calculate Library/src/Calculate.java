@@ -1,6 +1,6 @@
 /* This class contains methods that perform various math operations
  * @author Alexis Lin
- * @version September 6, 2018
+ * @version September 18, 2018
  */
 public class Calculate {
 	//returns the square of the input
@@ -128,7 +128,7 @@ public class Calculate {
 	 //returns the factorial of a number
 	 public static int factorial(int num) {
 		int product = 1;
-		 for (int i = 1; i <= num; i++) {
+		 for (int i = num; i > 0; i--) {
 			product = product*i;
 			 
 		 }
@@ -154,37 +154,20 @@ public class Calculate {
 		 return gcf;
 	 }
 	 //returns the square root of a number
-	 /*
-	  * divide radicand by guess, add guess, half the sum
-	  * if radicand-0.005 <  answer * answer <  radicand + 0.005
-	  * return the answer
-	  * loop until you find the correct answer
-	  */
 	 public static double sqrt(double radicand) {
-		 double guess;
-		 double approximate=1;
-		 double answer;
-		 for (guess = 0.0; guess <= radicand; guess += 0.001) {
-			 approximate = (radicand/guess + guess)/2.0; 
-			 if ((radicand - 0.005 <  approximate*approximate) && (approximate*approximate <  radicand + 0.005)) {
-			answer = Calculate.round2(approximate);
-			 }
-		 }
-		return answer;
-	 }
-}
-
-
-		 /*double answer = 0;
+		 double answer = 0;
 		 for (double guess = 0.0; guess <= radicand; guess += 0.001 ) {
 			 answer = (radicand/guess + guess)/2;
 			 if ((radicand - 0.005 <  answer*answer) && (answer*answer <  radicand + 0.005)) {
-				 return answer;
+				 answer = Calculate.round2(answer); 
+				 return answer;	 
 			 }
 		 }
-		 Calculate.round2(answer);
 		 return answer;
-		 */
+	 }
+}
+		
+
 
 	 
 	
