@@ -141,7 +141,12 @@ public class Calculate {
 					return false;			
 				}
 		 }
-		 return true;
+		 if (num == 1) {
+			 return false;
+		 }
+		 else {
+			 return true;
+		 }
 	 }
 	 //returns the greatest common factor of two numbers
 	 public static int gcf(int num1, int num2) {
@@ -156,7 +161,7 @@ public class Calculate {
 	 //returns the square root of a number
 	 public static double sqrt(double radicand) {
 		 double answer = 0;
-		 for (double guess = 0.0; guess <= radicand; guess += 0.001 ) {
+		 for (double guess = 0.001; guess <= radicand; guess += 0.001 ) {
 			 answer = (radicand/guess + guess)/2;
 			 if ((radicand - 0.005 <  answer*answer) && (answer*answer <  radicand + 0.005)) {
 				 answer = Calculate.round2(answer); 
