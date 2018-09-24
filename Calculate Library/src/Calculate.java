@@ -45,7 +45,7 @@ public class Calculate {
 	
 	//converts an improper fraction to a mixed number, returns
 	public static String toMixNum(int numerator, int denominator) {
-		return (numerator/denominator)+ " " + (numerator%denominator) + "/" + denominator; 
+		return (numerator/denominator)+ "_" + (numerator%denominator) + "/" + denominator; 
 	}
 	
 	//returns a foiled a quadratic
@@ -165,7 +165,7 @@ public class Calculate {
 			 answer = (radicand/guess + guess)/2;
 			 if ((radicand - 0.005 <  answer*answer) && (answer*answer <  radicand + 0.005)) {
 				 answer = Calculate.round2(answer); 
-				 return answer;	 
+				 return answer;
 			 }
 		 }
 		 return answer;
