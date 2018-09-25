@@ -117,13 +117,19 @@ public class Calculate {
 	 public static double exponent(double base, int exponent) {
 		 double newBase = base;
 		 double answer = base;
-		 for (int i = 2; i<=exponent; i++) {
+		 if (exponent == 0) {
+			 answer = 1;
+			 return answer;
+		 }
+		 else {
+		 	for (int i = 2; i<=exponent; i++) {
 			 newBase = base*newBase;
 			 answer = newBase;
-			
 			 }
-		 return answer;
+		 	return answer;
 		 }
+	 }
+	
 
 	 //returns the factorial of a number
 	 public static int factorial(int num) {
@@ -136,12 +142,13 @@ public class Calculate {
 	 }
 	 //checks if an integer is prime
 	 public static boolean isPrime(int num) {
+		
 		 for (int i = 2; i < num; i++) {
 				if (Calculate.isDivisibleBy(num,i)) {
 					return false;			
 				}
 		 }
-		 if (num == 1) {
+		 if (num <= 1) {
 			 return false;
 		 }
 		 else {
