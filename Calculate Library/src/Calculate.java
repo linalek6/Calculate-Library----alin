@@ -25,7 +25,7 @@ public class Calculate {
 
 	// returns the degrees from radians
 	public static double toDegrees(double radians) {
-		return radians * (180 / 3.14169);
+		return radians * (180 / 3.14159);
 	}
 
 	// returns radians from degrees
@@ -45,7 +45,12 @@ public class Calculate {
 
 	// converts an improper fraction to a mixed number, returns
 	public static String toMixedNum(int numerator, int denominator) {
-		return (numerator / denominator) + "_" + (numerator % denominator) + "/" + denominator;
+		if (numerator % denominator == 0) {
+			return numerator/denominator + "";
+		}
+		else {
+			return (numerator / denominator) + "_" + (numerator % denominator) + "/" + denominator;
+		}
 	}
 
 	// returns a foiled a quadratic
@@ -186,8 +191,10 @@ public class Calculate {
 	}
 	//returns the product of the quadratic formula
 	public static String quadForm(int a, int b, int c) {
-		if (Calculate.discriminant(a, b, c) < 0) 
+		if (Calculate.discriminant(a, b, c) < 0)
 			throw new IllegalArgumentException("no real roots");
+		if (a == 0)
+			throw new IllegalArgumentException("a cannot equal 0");
 		double quadFormAdd = (-b + (Calculate.sqrt(Calculate.discriminant(a, b, c))))/(2*a);
 		double quadFormSub = (-b - (Calculate.sqrt(Calculate.discriminant(a, b, c))))/(2*a);
 		if (quadFormAdd == quadFormSub) {
