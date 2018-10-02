@@ -1,3 +1,4 @@
+
 /* This class contains methods that perform various math operations
  * @author Alexis Lin
  * @version September 18, 2018
