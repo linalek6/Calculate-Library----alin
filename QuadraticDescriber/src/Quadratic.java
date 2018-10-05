@@ -4,12 +4,12 @@
  */
 public class Quadratic {
 	// returns the square of the input
-	public static int square(int number) {
+	public static double square(double number) {
 		return number * number;
 	}
 
 	// returns the cube of the input
-	public static int cube(int number) {
+	public static double cube(double number) {
 		return number * number * number;
 	}
 
@@ -206,16 +206,22 @@ public class Quadratic {
 	}
 
 	public static String quarDescriber(double a, double b, double c) {
+		String equation = "y = "+ a +"x^2"+ "+"+ b + " x " + "+" + c;
 		String direction;
 		if (a > 0) {
-			direction = "upwards";
+			direction = "Opens: Up";
 		} else {
-			direction = "downwards";
+			direction = "Opens: Down";
 		}
 		String xInt = Quadratic.quadForm(a, b, c);
-		double yint = c;
-		double vertex;
 		double xVertex = ((-b)/(2*a));
+		double yVertex = a*(Quadratic.square(xVertex))+ b*xVertex + c;
+		String Vertex = "("+ xVertex + ", " + yVertex + ")";
+		double yInt = c;
+		System.out.println(direction);
+		
+		
+		
 	}
 
 }
