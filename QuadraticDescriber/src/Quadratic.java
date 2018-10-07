@@ -194,8 +194,8 @@ public class Quadratic {
 	public static String quadForm(double a, double b, double c) {
 		if (Quadratic.discriminant(a, b, c) < 0)
 			throw new IllegalArgumentException("no real roots");
-		if (a == 0)
-			throw new IllegalArgumentException("a cannot equal 0");
+		//if (a == 0)
+			//throw new IllegalArgumentException("a cannot equal 0");
 		double quadFormAdd = (-b + (Quadratic.sqrt(Quadratic.discriminant(a, b, c)))) / (2 * a);
 		double quadFormSub = (-b - (Quadratic.sqrt(Quadratic.discriminant(a, b, c)))) / (2 * a);
 		if (quadFormAdd == quadFormSub) {
@@ -206,22 +206,25 @@ public class Quadratic {
 	}
 
 	public static String quarDescriber(double a, double b, double c) {
-		String equation = "y = "+ a +"x^2"+ "+"+ b + " x " + "+" + c;
+		String equation = "y = "+ a +" x^2"+  " + "+ b + " x" + " + " + c;
 		String direction;
 		if (a > 0) {
-			direction = "Opens: Up";
+			direction = "Up";
 		} else {
-			direction = "Opens: Down";
+			direction = "Down";
 		}
 		String xInt = Quadratic.quadForm(a, b, c);
 		double xVertex = ((-b)/(2*a));
 		double yVertex = a*(Quadratic.square(xVertex))+ b*xVertex + c;
-		String Vertex = "("+ xVertex + ", " + yVertex + ")";
-		double yInt = c;
-		System.out.println(direction);
-		
-		
-		
+		String vertex = "("+ xVertex + ", " + yVertex + ")";
+		return "Description of graph: \n" + equation + "\n\nOpens: " + direction + "\nAxis of Symmetry: " + xVertex + "\nVertex: " + vertex + "\nx-intercept(s): " + xInt + "\ny-intercept: " + c;
+		/*System.out.println();
+		System.out.println("Opens: " + direction);
+		System.out.println("Axis of Symmetry: " + xVertex);
+		System.out.println("Vertex: " + vertex);
+		System.out.println("x-intercept(s): " + xInt);
+		System.out.println("y-intercept: " + c);
+		*/
 	}
 
 }
