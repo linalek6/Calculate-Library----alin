@@ -24,5 +24,6 @@ public class QuadraticClient {
 			System.out.println("Do you want to keep going? (Type \"quit\" to end)");
 			nextStep = console.next();
 		} while(!(nextStep.equals("quit")));	
+		console.close();
 	}
 }
