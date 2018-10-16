@@ -98,7 +98,7 @@ public class Quadratic {
 	}
 
 	// returns the minimun of two numbers
-	public static int min(int num1, int num2) {
+	public static double min(double num1, double num2) {
 		if (num1 < num2) {
 			return num1;
 		} else {
@@ -193,38 +193,42 @@ public class Quadratic {
 	// returns the product of the quadratic formula
 	public static String quadForm(double a, double b, double c) {
 		if (Quadratic.discriminant(a, b, c) < 0)
-			throw new IllegalArgumentException("no real roots");
-		if (a == 0)
-			throw new IllegalArgumentException("a cannot equal 0");
+			return "None";
+		//if (a == 0)
+			//throw new IllegalArgumentException("a cannot equal 0");
 		double quadFormAdd = (-b + (Quadratic.sqrt(Quadratic.discriminant(a, b, c)))) / (2 * a);
 		double quadFormSub = (-b - (Quadratic.sqrt(Quadratic.discriminant(a, b, c)))) / (2 * a);
+		
 		if (quadFormAdd == quadFormSub) {
 			return Quadratic.round2(quadFormAdd) + "";
 		} else {
-			return Quadratic.round2(quadFormSub) + " and " + Quadratic.round2(quadFormAdd);
+			return Quadratic.min(Quadratic.round2(quadFormSub), Quadratic.round2(quadFormAdd)) + " and " + Quadratic.max(Quadratic.round2(quadFormSub), Quadratic.round2(quadFormAdd));
 		}
 	}
-
+	//returns description of quadratic equation
 	public static String quarDescriber(double a, double b, double c) {
 		String equation = "Description of graph: \ny = "+ a +" x^2"+  " + "+ b + " x" + " + " + c;
 		String direction;
-		if (a > 0) {
-			direction = "Up";
-		} else {
+		if (a < 0) {
 			direction = "Down";
+		} else {
+			direction = "Up";
 		}
 		String xInt = Quadratic.quadForm(a, b, c);
-		double xVertex = (-b)/(2*a);
+		double xVertex;
+			if (a==0) {
+				xVertex = 0;
+			}
+			else if (b==0 && a>=0) {
+				xVertex = (b)/(2*a);
+			}
+			else {
+				xVertex = (-b)/(2*a);
+			}
+			
 		double yVertex = a*(Quadratic.square(xVertex))+ b*xVertex + c;
 		String vertex = "\nVertex: ("+ xVertex + ", " + yVertex + ")";
 		return equation + "\n\nOpens: " + direction + "\nAxis of Symmetry: " + xVertex + vertex + "\nx-intercept(s): " + xInt + "\ny-intercept: " + c;
-		/*System.out.println();
-		System.out.println("Opens: " + direction);
-		System.out.println("Axis of Symmetry: " + xVertex);
-		System.out.println("Vertex: " + vertex);
-		System.out.println("x-intercept(s): " + xInt);
-		System.out.println("y-intercept: " + c);
-		*/
+		
 	}
-
 }
