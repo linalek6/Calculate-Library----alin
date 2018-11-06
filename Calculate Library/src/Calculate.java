@@ -183,7 +183,7 @@ public class Calculate {
 		double answer = 0;
 		for (double guess = 0.001; guess <= radicand; guess += 0.001) {
 			answer = (radicand / guess + guess) / 2;
-			if ((radicand - 0.005 < answer * answer) && (answer * answer < radicand + 0.005)) {
+			if ((radicand - 0.0005 < answer * answer) && (answer * answer < radicand + 0.0005)) {
 				answer = Calculate.round2(answer);
 				return answer;
 			}
@@ -201,8 +201,11 @@ public class Calculate {
 		if (quadFormAdd == quadFormSub) {
 			return Calculate.round2(quadFormAdd) + "";
 		}
-		else {
+		else if (quadFormAdd > quadFormSub) {
 			return Calculate.round2(quadFormSub) + " and " + Calculate.round2(quadFormAdd);
+		}
+		else {
+			return Calculate.round2(quadFormAdd) + " and " + Calculate.round2(quadFormSub);
 		}
 	}	
 }
